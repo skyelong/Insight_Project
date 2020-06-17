@@ -52,7 +52,7 @@ def ModelIt(fromUser  = 'Default'):
     
     colors2df = pd.DataFrame(colors2, columns = ['name', 'count'])
     
-    names = colors2df.sort_values(by=['count'], ascending = False)
+    names = colors2df[colors2df['count']>1000].sort_values(by=['count'], ascending = False)
     
     names
     print(names)

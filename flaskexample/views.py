@@ -66,4 +66,5 @@ def image_output():
     #just select the Cesareans  from the birth dtabase for the month that the user inputs
     colors = ModelIt()
     length = len(colors)
-    return render_template("output2.html", colors = colors, length=length, img=img)
+    total = colors.Price_15_ml.sum()
+    return render_template("output2.html", colors = colors, length=length, img=img, total=total)

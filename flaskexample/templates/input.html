@@ -43,13 +43,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Project name</a>
+          <a class="navbar-brand" href="#">Happy Little Trees</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">6 Color Palette Mixes</a></li>
+            <li><a href="#contact">3 Color Palette Mixes</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -58,24 +58,32 @@
     <div class="container">
 
    <div class="starter-template">
-       <h2>Input Page</h2>
-       <p>Enter some user input</p>
+       <h2>Welcome to Happy Little Trees!</h2>
+       <img src="/static/images/bobross.jpg" alt="Bob Ross" width=30% height=auto class="center">
+       <p>This app will help you select the best colors to paint the image of your choice! It will give you the exact Daniel Smith tube color and mixing recipes to make the same color with either a 6 or 3 color palette.</p> <br>
+       <p> Mixing your own colors with a limited palette will make your painting more harmonious and will help avoid muddy colors and can save you money!</p>
+
    </div>
+
 
    <div class = "container">
 
+
      <form action="/output" method="GET">
        <div class="form-group">
+         <img
          <label for="image_url">What is the URL of your image?:</label>
          <input type="text" id="image_url" name="image_url" placeholder="e.g. ">
        </div>
 
        <div>
-         <button type="submit" class="btn btn-default btn-lg">Find these Colors!</button>
+         <button type="submit" class="btn btn-default btn-lg">Your Rainbow Awaits!</button>
        </div>
 
      </form>
    </div>
+   <p> Right now I am very good with images that have one central subject, such as a bird or flower, and not so good with busy images, such as street scenes. I am also not so good with human portraits, but I am always learning.<p><br>
+  <p> Images larger then 800 x 800 may take me a little time to process. </p>
 
    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
    <script src="static/js/bootstrap.min.js"></script>
