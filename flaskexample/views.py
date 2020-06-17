@@ -65,7 +65,5 @@ def image_output():
     urllib.request.urlretrieve(img, "/Users/macbook/Box/git_hub/flask3/flaskexample/static/image2.jpg")
     #just select the Cesareans  from the birth dtabase for the month that the user inputs
     colors = ModelIt()
-    colors2 = colors.sort_values(by=['count'], ascending = False)
-    
-    length = len(colors2)
-    return render_template("output2.html", colors2 = colors2, length=length, img=img)
+    length = len(colors)
+    return render_template("output2.html", colors = colors, length=length, img=img)

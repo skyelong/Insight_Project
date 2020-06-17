@@ -76,4 +76,35 @@ def ModelIt(fromUser  = 'Default'):
     neutrals_df = pd.DataFrame(neutrals, columns = ['name', 'count'])
     names_n = neutrals_df.sort_values(by=['count'], ascending = False)
     names_n
-    return colors2df
+    
+    #get SQL
+    from sqlalchemy import create_engine
+    from sqlalchemy_utils import database_exists, create_database
+    import psycopg2
+    dbname = 'colors'
+    username = 'macbook'
+    pswd = 'DarwinRulez!1'
+    
+    engine = create_engine('postgresql://%s:%s@localhost/%s'%(username,pswd,dbname))
+    print('postgresql://%s:%s@localhost/%s'%(username,pswd,dbname))
+    print(engine.url)
+    
+    con = None
+    con = psycopg2.connect(database = dbname, user = username, host='localhost', password=pswd)
+    
+    def sql_query_from_list(list):
+        test = pd.DataFrame()
+        list_param = []
+        for i in range(0,len(list)):
+            color = list[i]
+            sql_param = """SELECT * FROM web_data
+            WHERE name = %(color)s"""
+            param = pd.read_sql_query(sql_param,con, params = {'color':color})
+            test = pd.concat([test,param], axis = 0, ignore_index=True)
+        return test 
+    
+    neutral_names = names_n.name.value_counts().index.to_list()
+    color_names = names.name.value_counts().index.to_list()
+    colors = sql_query_from_list(color_names)
+    neutrals = sql_query_from_list(color_names)
+    return colors
