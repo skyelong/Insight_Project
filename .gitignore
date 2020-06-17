@@ -132,3 +132,4 @@ sql.txt
 
 #image folder
 /static/swatches/
+/flaskexample/static/images/
