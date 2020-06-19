@@ -47,8 +47,7 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">6 Color Palette Mixes</a></li>
+            <li class="active"><a href="/input">Home</a></li>
             <li><a href="#contact">3 Color Palette Mixes</a></li>
           </ul>
         </div><!--/.nav-collapse -->
@@ -60,37 +59,8 @@
        <div class="starter-template">
          <h1> Ready to Paint!</h1>
          <img src={{img}} alt="Original Image" width=40% height=auto>
-         <h3>Results:</h3>
+         <h3>You Saved $ <span style="color:red; font-weight: bold"> 46.20 </span> by using Happy Little Trees!</h3>
        </div>
-       <p class= "lead"> Your One to One watercolor choices. <br>
-         The total price for this palette is: $ <span style="color:red; font-weight: bold"> {{total}}</span>  for individual 15 mL tubes<br> </p>
-        <p> These are the tube colors you could buy to match the most dominant colors in your image. Tube colors are convenient, but they may not be compatible with other colors and result in unexpected or muddy mixtures.<br>
-          For a palette of colors that are compatible, along with mixing recipes, please see the 6 or 3 color mixing palettes below.
-         Please check the additional information for any mixing incompatibilities. Prices are from <a href="https://www.dickblick.com/products/daniel-smith-extra-fine-watercolors/"> Dick Blick </a></p>
-       <table class="table table-hover">
-       <tr><th>Swatch</th><th>Color Name</th><th>Pigments</th><th>Price</th><th>Comments</th>
-       {% for _, row in colors.iterrows() %}
-       <tr><td><img src="static/images/ds_cropped/{{ row['image_names']}}" alt = "{{row['name']}}" width="75", height="75"</td><td>{{ row['name']}}</td>
-         <td>{{ row['pigments']}}</td>
-         <td><a href = "{{ row['url'] }}"> {{ row['Price_15_ml']}} </a></td>
-         <td>{{ row['Additional Information']}}</td>
-       </tr>
-       {% endfor %}
-       </table>
-
-       <p class= "lead"> Your 6-color palette. <br>
-         The total price for this palette is: $ <span style="color:red; font-weight: bold"> 74.05 </span> for individual 15 mL tubes. A 5 mL pack is also available for $ <span style="color:red; font-weight: bold"> 37.99 </span>   <br> </p>
-        <p> This palette is made from Hansa Yellow Light, New Gamboge, Quinacridone Rose, Pyrrol Scarlet, Ultramarine Blue & Phthalo Blue(GS) <br>
-          <span style="color:red; font-weight: bold"> For a full list of all 88 color combinations this palette can make click here! </span> <br>
-          Prices are from <a href="https://www.dickblick.com/products/daniel-smith-extra-fine-watercolors/"> Dick Blick </a></p>
-       <table class="table table-hover">
-       <tr><th>Swatch</th><th>Original Pigment</th><th>Mixing Recipe</th><th>
-       {% for _, row in colors.iterrows() %}
-       <tr><td><img src="static/images/6_p/{{ row['image_names']}}" alt = "{{row['name']}}" width="75", height="75"</td><td>{{ row['name']}}</td><td>{{ row['6_mix']}}</td>
-       </tr>
-       {% endfor %}
-       </table>
-
        <p class= "lead"> Your 3-color palette. <br>
          The total price for this palette is: $ <span style="color:red; font-weight: bold"> 35.19 </span> for individual 15 mL tubes.  <br> </p>
         <p> This palette is made from Hansa Yellow Light, Quinacridone Rose  & Phthalo Blue(GS) <br>
@@ -103,6 +73,23 @@
        </tr>
        {% endfor %}
        </table>
+
+       <p class= "lead"> Your One to One watercolor choices. <br>
+         The total price for this palette is: $ <span style="color:red; font-weight: bold"> {{total}}</span>  for individual 15 mL tubes<br> </p>
+        <p> These are the tube colors you could buy to match the most dominant colors in your image. Tube colors are convenient, but they may not be compatible with other colors and result in unexpected or muddy mixtures.<br>
+          For a palette of colors that are compatible, along with mixing recipes, please see the 3 color mixing palettes below.
+         Please check the additional information for any mixing incompatibilities. Prices are from <a href="https://www.dickblick.com/products/daniel-smith-extra-fine-watercolors/"> Dick Blick </a></p>
+       <table class="table table-hover">
+       <tr><th>Swatch</th><th>Color Name</th><th>Pigments</th><th>Price</th><th>Comments</th>
+       {% for _, row in colors.iterrows() %}
+       <tr><td><img src="static/images/ds_cropped/{{ row['image_names']}}" alt = "{{row['name']}}" width="75", height="75"</td><td>{{ row['name']}}</td>
+         <td>{{ row['pigments']}}</td>
+         <td><a href = "{{ row['url'] }}"> {{ row['Price_15_ml']}} </a></td>
+         <td>{{ row['Additional Information']}}</td>
+       </tr>
+       {% endfor %}
+       </table>
+
 
        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
        <script src="static/js/bootstrap.min.js"></script>
