@@ -30,11 +30,14 @@ def image_input():
 def image_output():
     #get the users image from URL
     img = request.args.get("image_url")
-    urllib.request.urlretrieve(img, "/Users/macbook/Box/git_hub/Insight_Project/flask/static/image2.jpg")
+    urllib.request.urlretrieve(img, "/Users/macbook/Box/git_hub/Insight_project/happy_trees/static/image2.jpg")
     #Run the model
     colors = ModelIt()
     #Calculate the length of the color list for flask
     length = len(colors)
     #Calculate the total price of all individual colors
     total = colors.Price_15_ml.sum()
-    return render_template("output2.html", colors = colors, length=length, img=img, total=total)
+    savings = total - 35.19
+    savings = format(savings, '.2f')
+    
+    return render_template("output.html", colors = colors, length=length, img=img, total=total, savings=savings)

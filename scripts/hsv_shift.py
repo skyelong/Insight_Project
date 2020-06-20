@@ -163,7 +163,7 @@ def import_convert_pixelize(image_path):
     img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     img_HSV = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
     plt.imshow(img_rgb);
-    img_sml = cv2.resize(img_HSV,None,fx=0.75,fy=0.75,interpolation=cv2.INTER_AREA)
+    #img_sml = cv2.resize(img_HSV,None,fx=0.75,fy=0.75,interpolation=cv2.INTER_AREA)
     #convert to pixels
-    pixels = np.float32(img_sml.reshape(-1, 3))
+    pixels = np.float32(img_HSV.reshape(-1, 3))
     return pixels

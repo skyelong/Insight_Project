@@ -16,7 +16,7 @@ import matplotlib.pyplot as plt
 
 #set the directory for custom scripts
 import sys
-sys.path.append('/Users/macbook/Box/git_hub/Insight_Project/scripts/')
+sys.path.append('/Users/macbook/Box/git_hub/Insight_project/scripts/')
 
 #import custom scripts
 import sql_con
@@ -25,9 +25,9 @@ import hsv_shift as hsv
 
 
 def ModelIt(fromUser  = 'Default'):
-    hsv_knn_chroma = load('/Users/macbook/Box/git_hub/Insight_Project/models/ds_h_chroma.joblib')
-    hsv_knn_neutral = load('/Users/macbook/Box/git_hub/Insight_Project/models/ds_h_neutrals.joblib')
-    pixels = hsv.import_convert_pixelize("/Users/macbook/Box/git_hub/Insight_Project/happy_trees/static/image2.jpg")
+    hsv_knn_chroma = load('/Users/macbook/Box/git_hub/Insight_project/models/ds_h_chroma.joblib')
+    hsv_knn_neutral = load('/Users/macbook/Box/git_hub/Insight_project/models/ds_h_neutrals.joblib')
+    pixels = hsv.import_convert_pixelize("/Users/macbook/Box/git_hub/Insight_project/happy_trees/static/image2.jpg")
     
     shifted_colors, shifted_neutrals = hsv.shift_h_split(pixels, .25, .25)
     
