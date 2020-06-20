@@ -16,7 +16,7 @@ import matplotlib.pyplot as plt
 
 #set the directory for custom scripts
 import sys
-sys.path.append('home/ubuntu/Insight_Project/scripts/')
+sys.path.append('./scripts/')
 
 #import custom scripts
 import sql_con
