@@ -15,12 +15,6 @@ from happy_trees.a_Model import ModelIt
 import urllib
 
 # Python code to connect to Postgres
-user = 'macbook' 
-host = 'localhost'
-dbname = 'birth_db'
-db = create_engine('postgres://%s%s/%s'%(user,host,dbname))
-con = None
-con = psycopg2.connect(database = dbname, user = user)
 
 @app.route('/')
 def image_input():
@@ -30,7 +24,7 @@ def image_input():
 def image_output():
     #get the users image from URL
     img = request.args.get("image_url")
-    urllib.request.urlretrieve(img, "/Users/macbook/Box/git_hub/Insight_project/happy_trees/static/image2.jpg")
+    urllib.request.urlretrieve(img, "home/ubuntu/Insight_project/happy_trees/static/image2.jpg")
     #Run the model
     colors = ModelIt()
     #Calculate the length of the color list for flask
