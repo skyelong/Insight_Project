@@ -38,4 +38,4 @@ def image_output():
 
 @app.route('/3_color')
 def three_color():
-   return(render_template("3_color.html")
+   return render_template("3_color.html")
