@@ -60,29 +60,11 @@
          <h1> Here are all the colors you can make with Hansa Yellow Light, Quinacridone Rose and Phthalo Blue (GS)</h1>
        </div>
        <p class= "lead"> Your 3-color palette. <br>
-         The total price for this palette is: $ <span style="color:red; font-weight: bold"> 35.19 </span> for individual 15 mL tubes.  <br> </p>
-        <p> This palette is made from Hansa Yellow Light, Quinacridone Rose  & Phthalo Blue(GS) <br>
-          <span style="color:red; font-weight: bold"> For a full list of all 88 color combinations this palette can make click here! </span> <br>
-          Prices are from <a href="https://www.dickblick.com/products/daniel-smith-extra-fine-watercolors/"> Dick Blick </a></p>
+        <p> This palette is made from Hansa Yellow Light, Quinacridone Rose  & Phthalo Blue(GS) <br></p>
        <table class="table table-hover">
        <tr><th>Swatch</th><th>Original Pigment</th><th>Mixing Recipe</th><th>
        {% for _, row in colors.iterrows() %}
        <tr><td><img src='/static/images/3_p/{{ row['image_names']}}' alt = '{{row['name']}}' width="75", height="75"</td><td>{{ row['name']}}</td><td>{{ row['3_mix']}}</td>
-       </tr>
-       {% endfor %}
-       </table>
-
-       <p class= "lead"> Your One to One watercolor choices. <br>
-         The total price for this palette is: $ <span style="color:red; font-weight: bold"> {{total}}</span>  for individual 15 mL tubes<br> </p>
-        <p> These are the tube colors you could buy to match the most dominant colors in your image. Tube colors are convenient, but they may not be compatible with other colors and result in unexpected or muddy mixtures.<br>
-         Please check the additional information for any mixing incompatibilities. Prices are from <a href="https://www.dickblick.com/products/daniel-smith-extra-fine-watercolors/"> Dick Blick </a></p>
-       <table class="table table-hover">
-       <tr><th>Swatch</th><th>Color Name</th><th>Pigments</th><th>Price</th><th>Comments</th>
-       {% for _, row in colors.iterrows() %}
-       <tr><td><img src='/static/images/ds_cropped/{{ row['image_names']}}' alt = '{{row['name']}}' width="75", height="75"</td><td>{{ row['name']}}</td>
-         <td>{{ row['pigments']}}</td>
-         <td><a href = "https://www.dickblick.com/products/daniel-smith-extra-fine-watercolors/"> {{ row['Price_15_ml']}} </a></td>
-         <td>{{ row['Additional Information']}}</td>
        </tr>
        {% endfor %}
        </table>

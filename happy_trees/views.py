@@ -38,4 +38,20 @@ def image_output():
 
 @app.route('/3_color')
 def three_color():
-   return render_template("3_color.html")
+    from sqlalchemy import create_engine
+    from sqlalchemy_utils import database_exists, create_database
+    import psycopg2
+    dbname = 'colors'
+    username = 'ubuntu'
+    pswd = 'DarwinRulez!1'
+    
+    engine = create_engine('postgresql://%s:%s@localhost/%s'%(username,pswd,dbname))
+    print('postgresql://%s:%s@localhost/%s'%(username,pswd,dbname))
+    print(engine.url)
+    
+    con = None
+    con = psycopg2.connect(database = dbname, user = username, host='localhost', password=pswd)
+
+    sql_query = """SELECT * FROM color_data3"""
+    colors = pd.read_sql_query(sql_query, con)  
+    return render_template("3_color.html", colors = colors)
