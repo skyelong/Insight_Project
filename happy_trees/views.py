@@ -52,6 +52,6 @@ def three_color():
     con = None
     con = psycopg2.connect(database = dbname, user = username, host='localhost', password=pswd)
 
-    sql_query = """SELECT * FROM color_data3"""
+    sql_query = """SELECT * FROM color_data3 order by name"""
     colors = pd.read_sql_query(sql_query, con)  
     return render_template("3_color.html", colors = colors)
