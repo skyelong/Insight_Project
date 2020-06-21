@@ -24,7 +24,7 @@ def image_input():
 def image_output():
     #get the users image from URL
     img = request.args.get("image_url")
-    urllib.request.urlretrieve(img, "/static/image2.jpg")
+    urllib.request.urlretrieve(img, "../static/image2.jpg")
     #Run the model
     colors = ModelIt()
     #Calculate the length of the color list for flask
