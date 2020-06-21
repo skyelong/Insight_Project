@@ -96,7 +96,7 @@ def ModelIt(fromUser  = 'Default'):
         list_param = []
         for i in range(0,len(list)):
             color = list[i]
-            sql_param = """SELECT * FROM color_data
+            sql_param = """SELECT * FROM color_data3
             WHERE name = %(color)s"""
             param = pd.read_sql_query(sql_param,con, params = {'color':color})
             test = pd.concat([test,param], axis = 0, ignore_index=True)
