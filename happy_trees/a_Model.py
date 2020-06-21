@@ -97,7 +97,7 @@ def ModelIt(fromUser  = 'Default'):
         for i in range(0,len(list)):
             color = list[i]
             sql_param = """SELECT * FROM color_data3
-            WHERE name = %(color)s"""
+            WHERE name = %(color)s ORDER By name"""
             param = pd.read_sql_query(sql_param,con, params = {'color':color})
             test = pd.concat([test,param], axis = 0, ignore_index=True)
         return test 
