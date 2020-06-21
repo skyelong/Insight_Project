@@ -35,3 +35,7 @@ def image_output():
     savings = format(savings, '.2f')
     
     return render_template("output.html", colors = colors, length=length, img=img, total=total, savings=savings)
+
+@app.route('/3_color')
+def three_color():
+   return(render_template("3_color.html")
