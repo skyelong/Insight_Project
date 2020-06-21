@@ -69,7 +69,7 @@
        <table class="table table-hover">
        <tr><th>Swatch</th><th>Original Pigment</th><th>Mixing Recipe</th><th>
        {% for _, row in colors.iterrows() %}
-       <tr><td><img src="static/images/3_p/{{ row['image_names']}}" alt = "{{row['name']}}" width="75", height="75"</td><td>{{ row['name']}}</td><td>{{ row['3_mix']}}</td>
+       <tr><td><img src='home/ubuntu/Insight_Project/happy_trees/static/images/3_p/{{ row['image_names']}}' alt = '{{row['name']}}' width="75", height="75"</td><td>{{ row['name']}}</td><td>{{ row['3_mix']}}</td>
        </tr>
        {% endfor %}
        </table>
@@ -82,7 +82,7 @@
        <table class="table table-hover">
        <tr><th>Swatch</th><th>Color Name</th><th>Pigments</th><th>Price</th><th>Comments</th>
        {% for _, row in colors.iterrows() %}
-       <tr><td><img src="static/images/ds_cropped/{{ row['image_names']}}" alt = "{{row['name']}}" width="75", height="75"</td><td>{{ row['name']}}</td>
+       <tr><td><img src='home/ubuntu/Insight_Project/happy_trees/static/images/ds_cropped/{{ row['image_names']}}' alt = '{{row['name']}}' width="75", height="75"</td><td>{{ row['name']}}</td>
          <td>{{ row['pigments']}}</td>
          <td><a href = "{{ row['url'] }}"> {{ row['Price_15_ml']}} </a></td>
          <td>{{ row['Additional Information']}}</td>
