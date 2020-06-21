@@ -26,7 +26,7 @@ pswd = cred[1]
 ## Here, we're using postgres, but sqlalchemy can connect to other things too.
 engine = create_engine('postgresql://%s:%s@localhost/%s'%(username,pswd,dbname))
 con = None
-con = psycopg2.connect(database = dbname, user = "macbook", host='localhost', password=pswd)
+con = psycopg2.connect(database = dbname, user = "ubuntu", host='localhost', password=pswd)
 print(engine.url)
 
 
