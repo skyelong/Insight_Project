@@ -106,5 +106,5 @@ def ModelIt(fromUser  = 'Default'):
     color_names = names.name.value_counts().index.to_list()
     colors = sql_query_from_list(color_names)
     neutrals = sql_query_from_list(neutral_names)
-    colors2 = pd.concat([colors, neutrals], axis = 0)
+    colors2 = pd.concat([colors, neutrals], axis = 0).sort_values('index')
     return colors2
